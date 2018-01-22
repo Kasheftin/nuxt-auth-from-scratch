@@ -1,0 +1,11 @@
+{
+  "name": "nuxt-auth-from-scratch-backend",
+  "version": "1.0.0",
+  "description": "The simple backend for the nuxt-auth-from-scratch tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kasheftin",
+  "license": "ISC"
+}

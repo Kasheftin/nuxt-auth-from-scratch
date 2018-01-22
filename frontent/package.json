@@ -1,0 +1,38 @@
+{
+  "name": "nuxt-auth-from-scratch-frontend",
+  "version": "1.0.0",
+  "description": "Frontent for the nuxt-auth-from-scratch tutorial",
+  "author": {
+    "name": "Kasheftin",
+    "email": "kasheftin@gmail.com",
+    "url": "http://rag.lt"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Kasheftin/nuxt-auth-from-scratch.git"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0",
+    "vuetify": "^0.17.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1"
+  }
+}

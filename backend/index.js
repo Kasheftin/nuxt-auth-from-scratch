@@ -1,7 +1,10 @@
 const mysql = require('mysql')
 const express = require('express')
 const bodyParser = require('body-parser')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
 const config = require('./config')
+const auth = require('./auth')
 
 try {
   const db = mysql.createConnection(config.db)
@@ -17,6 +20,8 @@ try {
       res.json({type: 'success', message: 'Test OK', results})
     })
   })
+
+  app.use('/auth', auth({db, express, bcrypt, jwt, jwtToken: config.jwtToken}))
 
   app.listen(config.port)
   console.log('App is running on port ' + config.port)

@@ -3,6 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+const google = require('googleapis')
 const config = require('./config')
 const auth = require('./auth')
 
@@ -21,7 +22,7 @@ try {
     })
   })
 
-  app.use('/auth', auth({db, express, bcrypt, jwt, jwtToken: config.jwtToken}))
+  app.use('/auth', auth({db, express, bcrypt, jwt, config, google}))
 
   app.listen(config.port)
   console.log('App is running on port ' + config.port)

@@ -36,6 +36,15 @@ export const actions = {
         return response
       })
   },
+  login_google ({commit}, token) {
+    return api.auth.google({token})
+      .then(response => {
+        commit('set_user', response.data.user)
+        setAuthToken(response.data.token)
+        cookies.set('x-access-token', response.data.token, {expires: 7})
+        return response
+      })
+  },
   reset ({commit}) {
     commit('reset_user')
     resetAuthToken()

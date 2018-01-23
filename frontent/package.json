@@ -19,6 +19,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "nuxt": "^1.0.0",
     "vuetify": "^0.17.4"
   },

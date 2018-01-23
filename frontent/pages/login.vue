@@ -4,7 +4,7 @@
       <v-card-title class="headline">Log In</v-card-title>
       <v-card-text>
         <v-form @submit.prevent="submit">
-          <v-alert v-if="alert" :type="alert.type">{{alert.message}}</v-alert>
+          <v-alert v-if="alert" :type="alert.type" value="true">{{alert.message}}</v-alert>
           <v-text-field label="Email" v-model="email"></v-text-field>
           <v-text-field label="Password" v-model="password" type="password"></v-text-field>
           <v-btn type="submit" :loading="loading" :disabled="loading">Log In</v-btn>
@@ -38,6 +38,7 @@ export default {
         this.loading = false
         this.$router.push('/admin')
       }).catch(error => {
+        console.log('error', error.response)
         this.loading = false
         if (error.response && error.response.data) {
           this.alert = {type: 'error', message: error.response.data.message || error.reponse.status}

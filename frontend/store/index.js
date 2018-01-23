@@ -22,6 +22,7 @@ export const actions = {
             resolve(true)
           })
           .catch(error => {
+            console.log('fetch user error', error)
             resetAuthToken()
             resolve(false)
           })

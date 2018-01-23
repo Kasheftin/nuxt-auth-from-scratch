@@ -11,6 +11,7 @@
           <v-spacer></v-spacer>
           <v-btn color="primary" flat nuxt to="/">Main Page</v-btn>
           <v-btn color="primary" flat @click="checkMe">Check Me</v-btn>
+          <v-btn color="primary" flat @click="logOut">Log Out</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -25,6 +26,11 @@ export default {
   methods: {
     checkMe () {
       this.$store.dispatch('auth/fetch')
+    },
+    logOut () {
+      this.$store.dispatch('auth/reset').then(() => {
+        this.$router.push('/')
+      })
     }
   }
 }

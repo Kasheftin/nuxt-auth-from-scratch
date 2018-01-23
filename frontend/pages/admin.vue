@@ -25,7 +25,9 @@ export default {
   },
   methods: {
     checkMe () {
-      this.$store.dispatch('auth/fetch')
+      this.$store.dispatch('auth/fetch').then(result => {
+        console.log('Check Me Result:', result.data.message)
+      })
     },
     logOut () {
       this.$store.dispatch('auth/reset').then(() => {

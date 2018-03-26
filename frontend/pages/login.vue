@@ -62,13 +62,14 @@ export default {
         email: this.email,
         password: this.password
       }).then(result => {
+        console.log('result', result)
         this.alert = {type: 'success', message: result.data.message}
         this.loading = false
         this.$router.push('/admin')
       }).catch(error => {
         this.loading = false
         if (error.response && error.response.data) {
-          this.alert = {type: 'error', message: error.response.data.message || error.reponse.status}
+          this.alert = {type: 'error', message: error.response.data.message || error.response.status}
         }
       })
     },
@@ -86,7 +87,7 @@ export default {
         .catch(error => {
           this.google_loading = false
           if (error.response && error.response.data) {
-            this.alert = {type: 'error', message: error.response.data.message || error.reponse.status}
+            this.alert = {type: 'error', message: error.response.data.message || error.response.status}
           }
         })
     }

@@ -15,6 +15,18 @@ try {
     extended: true
   }))
 
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS')
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, x-access-token')
+    if (req.method === 'OPTIONS') {
+      res.sendStatus(200)
+    }
+    else {
+      next()
+    }
+  })
+
   app.get('/test', (req, res) => {
     db.query('select 1+1', (error, results) => {
       if (error) return res.status(500).json({type: 'error', error})
